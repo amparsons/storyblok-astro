@@ -6,7 +6,7 @@ const renderedContent = renderRichText(blok.content)
 ---
 
 <article {...storyblokEditable(blok)}>
-  <h1>{blok.title}</h1>
+  <h1 class="test">{blok.title}</h1>
   {blok.featured_image?.filename && (
     <img src={blok.featured_image.filename} alt={blok.featured_image.alt || ''} />
   )}
