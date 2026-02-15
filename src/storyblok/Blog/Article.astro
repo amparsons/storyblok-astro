@@ -1,0 +1,15 @@
+---
+import { storyblokEditable, renderRichText } from '@storyblok/astro'
+
+const { blok } = Astro.props
+const renderedContent = renderRichText(blok.content)
+---
+
+<article {...storyblokEditable(blok)}>
+  <h1>{blok.title}</h1>
+  {blok.featured_image?.filename && (
+    <img src={blok.featured_image.filename} alt={blok.featured_image.alt || ''} />
+  )}
+  <p>By {blok.author} | {blok.published_date}</p>
+  <Fragment set:html={renderedContent} />
+</article>
