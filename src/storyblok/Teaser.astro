@@ -1,8 +1,10 @@
 ---
 import { storyblokEditable } from '@storyblok/astro';
 const { blok } = Astro.props;
+const bgColour = blok.background_colour?.color ? `background-color: ${blok.background_colour.color};` : '';
+console.log(blok);
 ---
 
-<section class="teaser" {...storyblokEditable(blok)}>
+<section class="teaser" {...storyblokEditable(blok)} style={bgColour}>
 	<h1>{blok.headline}</h1>
 </section>
