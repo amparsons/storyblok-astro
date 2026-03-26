@@ -1,0 +1,14 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+import NavItem from "./NavItem.astro";
+const { blok } = Astro.props;
+const navItems = blok.nav_items ?? [];
+//console.log('Full blok object:', blok);
+console.log('Nav items:', navItems);
+---
+
+<nav {...storyblokEditable(blok)}>
+  {navItems.map((item) => (
+    <NavItem blok={item} />
+  ))}
+</nav>

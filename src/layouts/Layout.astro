@@ -1,5 +1,7 @@
 ---
+import Navigation from "../storyblok/Navigation.astro";
 const currentYear = new Date().getFullYear();
+const { navigation } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,6 +19,9 @@ const currentYear = new Date().getFullYear();
 		<meta name="generator" content={Astro.generator} />
 	</head>
 	<body>
+		<header>
+			{navigation && <Navigation blok={navigation} />}
+		</header>
 		<slot />
 		<footer>All rights reserved © {currentYear}</footer>
 	</body>

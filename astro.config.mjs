@@ -28,6 +28,8 @@ export default defineConfig({
 			},
 			components: {
 				page: 'storyblok/Page',
+				navigation: "storyblok/Navigation",
+        		nav_item: "storyblok/NavItem",
 				grid: 'storyblok/Grid',
 				feature: 'storyblok/Feature',
 				teaser: 'storyblok/Teaser',

@@ -1,0 +1,10 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+const { blok } = Astro.props;
+console.log('NavItem blok:', blok);
+console.log('Link object:', blok.link);
+---
+
+<a href={blok.link?.cached_url ? `/${blok.link.cached_url}` : '#'} {...storyblokEditable(blok)}>
+  {blok.label}
+</a>
